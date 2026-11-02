@@ -25,6 +25,7 @@ Press Enter on the downloaded file to install it, then restart NVDA when prompte
 In the search field, combo boxes (such as the drive picker when changing a folder) and sliders, the arrows, Home, End, Enter and Space go to the control as normal. Tab moves out of it. In popup menus (such as a pack's actions menu) the keys go straight to the menu, the first item is selected when it opens, and closing the menu returns you to the button that opened it.
 
 Sections that are off screen, such as packs further down the list or the Advanced settings, are scrolled into view as you reach them.
+
 ## Label fixes
 
 - Pack buttons read as "Christmas 2017, Installed" (pack, then status) and "Actions for Christmas 2017".

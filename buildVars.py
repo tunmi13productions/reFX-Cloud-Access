@@ -13,9 +13,13 @@ addon_info = {
 		"Warning: this add-on was vibe coded with Claude Opus 5.5, Anthropic's AI model. "
 		"Expect oddities, and please report anything that behaves strangely."
 	),
-	"addon_version": "1.0",
+	"addon_version": "1.0.1",
 	# Translators: what changed in this version, shown in NVDA's add-on store.
-	"addon_changelog": "First release.",
+	"addon_changelog": (
+		"The add-on's keys no longer appear in NVDA's Input Gestures dialog, since they only replace plain keys. "
+		"The add-on no longer includes a help page. "
+		"Nothing about how it works in reFX Cloud has changed since 1.0."
+	),
 	"addon_author": "tunmi13 <tunmi12@mail.com>",
 	"addon_url": "https://github.com/tunmi13productions/reFX-Cloud-Access",
 	"addon_minimumNVDAVersion": "2024.1",

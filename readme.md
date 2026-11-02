@@ -44,7 +44,7 @@ Sections that are off screen, such as packs further down the list or the Advance
 py build.py
 ```
 
-This writes `refxCloudAccess-<version>.nvda-addon` next to the script, generating `addon/manifest.ini` and the add-on's help page from `buildVars.py` and this readme. `py build.py --clean` removes the build output.
+This writes `refxCloudAccess-<version>.nvda-addon` next to the script, generating `addon/manifest.ini` from `buildVars.py`. `py build.py --clean` removes the build output.
 
 ## Releasing
 

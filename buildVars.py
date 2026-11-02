@@ -18,11 +18,10 @@ addon_info = {
 	"addon_changelog": "First release.",
 	"addon_author": "tunmi13 <tunmi12@mail.com>",
 	"addon_url": "https://github.com/tunmi13productions/reFX-Cloud-Access",
-	"addon_docFileName": "readme.html",
 	"addon_minimumNVDAVersion": "2024.1",
 	"addon_lastTestedNVDAVersion": "2026.2",
 	"addon_updateChannel": None,
 }
 
 # Paths inside addon/ that are copied into the package.
-addon_source_dirs = ["appModules", "globalPlugins", "doc"]
+addon_source_dirs = ["appModules", "globalPlugins"]

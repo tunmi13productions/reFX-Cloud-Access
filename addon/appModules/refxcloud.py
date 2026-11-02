@@ -20,7 +20,6 @@ from UIAHandler import UIA as UIAClient
 
 Role = controlTypes.Role
 State = controlTypes.State
-CATEGORY = "reFX Cloud"
 
 TAB_STOP_TYPES = frozenset((
 	UIAClient.UIA_ButtonControlTypeId,
@@ -246,7 +245,8 @@ def _humanize(automationName):
 
 
 class AppModule(appModuleHandler.AppModule):
-	scriptCategory = CATEGORY
+	# Scripts have no descriptions on purpose: they replace plain keys (Tab, arrows, Enter), so
+	# there is nothing worth remapping and they stay out of the Input Gestures dialog.
 
 	def __init__(self, *args, **kwargs):
 		super().__init__(*args, **kwargs)
@@ -449,43 +449,43 @@ class AppModule(appModuleHandler.AppModule):
 
 	# Scripts
 
-	@script(description="Moves to the next control", gesture="kb:tab")
+	@script(gesture="kb:tab")
 	def script_nextControl(self, gesture):
 		self._move(gesture, _isTabStop, 1)
 
-	@script(description="Moves to the previous control", gesture="kb:shift+tab")
+	@script(gesture="kb:shift+tab")
 	def script_previousControl(self, gesture):
 		self._move(gesture, _isTabStop, -1)
 
-	@script(description="Moves to the next item, including text", gesture="kb:downArrow")
+	@script(gesture="kb:downArrow")
 	def script_nextItem(self, gesture):
 		if self._passThrough():
 			gesture.send()
 			return
 		self._move(gesture, _isReadingStop, 1)
 
-	@script(description="Moves to the previous item, including text", gesture="kb:upArrow")
+	@script(gesture="kb:upArrow")
 	def script_previousItem(self, gesture):
 		if self._passThrough():
 			gesture.send()
 			return
 		self._move(gesture, _isReadingStop, -1)
 
-	@script(description="Moves to the first item", gesture="kb:home")
+	@script(gesture="kb:home")
 	def script_firstItem(self, gesture):
 		if self._passThrough():
 			gesture.send()
 			return
 		self._move(gesture, _isReadingStop, 1, jump=True)
 
-	@script(description="Moves to the last item", gesture="kb:end")
+	@script(gesture="kb:end")
 	def script_lastItem(self, gesture):
 		if self._passThrough():
 			gesture.send()
 			return
 		self._move(gesture, _isReadingStop, -1, jump=True)
 
-	@script(description="Activates the focused control", gestures=["kb:enter", "kb:space"])
+	@script(gestures=["kb:enter", "kb:space"])
 	def script_activate(self, gesture):
 		element = self._focusedElement()
 		if element is None or element.CurrentControlType in PASS_THROUGH_TYPES + (UIAClient.UIA_WindowControlTypeId,):
@@ -506,11 +506,11 @@ class AppModule(appModuleHandler.AppModule):
 				return
 		gesture.send()
 
-	@script(description="Switches to the next page in the sidebar", gesture="kb:control+tab")
+	@script(gesture="kb:control+tab")
 	def script_nextPage(self, gesture):
 		self._switchPage(gesture, 1)
 
-	@script(description="Switches to the previous page in the sidebar", gesture="kb:control+shift+tab")
+	@script(gesture="kb:control+shift+tab")
 	def script_previousPage(self, gesture):
 		self._switchPage(gesture, -1)
 
